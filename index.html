@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semagn Derese - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            background-color: #1e293b; /* Slate 800 */
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 4px solid #4f46e5; /* Indigo 600 */
+            border-radius: 0 0 1rem 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #f8fafc; /* White */
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #94a3b8; /* Slate 400 */
+            margin-bottom: 2rem;
+        }
+        section {
+            background-color: #1e293b; /* Slate 800 */
+            padding: 2.5rem;
+            margin-top: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        section h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4f46e5; /* Indigo 600 */
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #334155; /* Slate 700 */
+            padding-bottom: 0.5rem;
+        }
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        .summary-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        .experience-item, .education-item, .skill-category {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #334155; /* Slate 700 */
+            border-radius: 0.75rem;
+            border-left: 5px solid #a78bfa; /* Violet 400 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .experience-item h4, .education-item h4, .skill-category h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #cbd5e1; /* Slate 300 */
+            margin-bottom: 0.5rem;
+        }
+        .experience-item p, .education-item p {
+            color: #94a3b8; /* Slate 400 */
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item ul, .skill-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.5rem;
+        }
+        .experience-item ul li, .skill-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+        .experience-item ul li::before, .skill-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #6366f1; /* Indigo 500 */
+            font-weight: bold;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .skill-list li {
+            background-color: #4f46e5; /* Indigo 600 */
+            color: #f8fafc;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        .skill-list li:hover {
+            transform: translateY(-2px);
+            background-color: #6366f1; /* Indigo 500 */
+        }
+        .skill-list li::before {
+            content: ''; /* Remove bullet for skills tags */
+            display: none;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem 0;
+            background-color: #1e293b;
+            border-top: 2px solid #334155;
+            border-radius: 1rem 1rem 0 0;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+            section h3 {
+                font-size: 1.6rem;
+            }
+            .experience-item h4, .education-item h4, .skill-category h4 {
+                font-size: 1.2rem;
+            }
+            .summary-text, .experience-item p, .education-item p, .experience-item ul li, .skill-list li {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            section {
+                padding: 1rem;
+            }
+            section h3 {
+                font-size: 1.4rem;
+            }
+            .experience-item h4, .education-item h4, .skill-category h4 {
+                font-size: 1.1rem;
+            }
+            .summary-text, .experience-item p, .education-item p, .experience-item ul li, .skill-list li {
+                font-size: 0.85rem;
+            }
+            .skill-list {
+                gap: 0.5rem;
+            }
+            .skill-list li {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <div class="container mx-auto px-4 py-8">
+        <header class="bg-gray-800 text-center py-8 rounded-b-lg shadow-lg">
+            <h1 class="text-indigo-100 mb-2">SEMAGN DERESE</h1>
+            <h2 class="text-slate-400">Cyber Security Analyst | Software Developer</h2>
+            <div class="contact-info text-slate-300 mt-6 text-lg">
+                <p><strong>Phone:</strong> +251942721773 | +251912973091</p>
+                <p><strong>Email:</strong> semagnderese42@gmail.com</p>
+                <p><strong>Location:</strong> Addis Ababa, Ethiopia</p>
+                <p><a href="https://www.linkedin.com/in/semagn-derese-9204001b9/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">LinkedIn Profile</a></p>
+                <p><a href="[Your GitHub/Portfolio Website Link]" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">GitHub/Portfolio Website</a></p>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h3>Summary</h3>
+                <p class="summary-text">
+                    I am an experienced software professional with a Bachelor's degree in Computer Science and a Master of Science in Project Management. With over six years of experience in software development and cybersecurity, I have a proven track record of creating efficient algorithms and mathematical models during my tenure as a Numerical Developer at INSA. As a Software Application Programmer at INSA, I proficiently designed and maintained robust software solutions using C#, PHP, Python, Java, and various web technologies. Currently, I serve as a Cyber Security Analyst at Dashen Bank, where I focus on protecting the organization's cybersecurity systems. I am highly skilled in innovation, problem-solving, and team collaboration.
+                </p>
+            </section>
+
+            <section>
+                <h3>Work Experience</h3>
+                
+                <div class="experience-item">
+                    <h4>Cyber Security Analyst</h4>
+                    <p class="text-slate-400"><strong>Dashen Bank</strong> | Addis Ababa, Ethiopia</p>
+                    <p class="text-slate-400">November 11, 2024 – Present</p>
+                    <ul class="list-disc ml-4 text-slate-300">
+                        <li>Analyzed and proposed solutions for cybersecurity threats and vulnerabilities to protect organizational data security.</li>
+                        <li>Monitored security systems, identified and responded to any suspicious activities.</li>
+                        <li>Developed and implemented security policies and procedures.</li>
+                        <li>Regularly conducted security enhancements and supported security audits.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h4>Software Application Programmer</h4>
+                    <p class="text-slate-400"><strong>INSA (Information Network Security Agency)</strong> | Addis Ababa, Ethiopia</p>
+                    <p class="text-slate-400">2020 – November 11, 2024</p>
+                    <ul class="list-disc ml-4 text-slate-300">
+                        <li>Designed and developed software applications for various projects.</li>
+                        <li>Worked on full-stack development using C#, PHP, Python, Java, web technologies, and database management.</li>
+                        <li>Conducted code reviews and testing.</li>
+                        <li>Maintained and improved existing systems.</li>
+                        <li>Collaborated with cross-functional teams to gather requirements and deliver scalable and efficient solutions.</li>
+                        <li>Ensured code quality and adherence to best practices, producing clean and well-documented code.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h4>Numerical Developer</h4>
+                    <p class="text-slate-400"><strong>INSA (Information Network Security Agency)</strong> | Addis Ababa, Ethiopia</p>
+                    <p class="text-slate-400">2018 – 2020</p>
+                    <ul class="list-disc ml-4 text-slate-300">
+                        <li>Developed efficient numerical algorithms.</li>
+                        <li>Implemented mathematical models for simulations.</li>
+                        <li>Collaborated with cross-functional teams.</li>
+                        <li>Ensured accuracy and reliability of computational results.</li>
+                        <li>Collaborated with team members to optimize performance and troubleshoot issues.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>Education</h3>
+                
+                <div class="education-item">
+                    <h4>Master of Science in Project Management</h4>
+                    <p class="text-slate-400"><strong>Sheger College</strong> | Addis Ababa, Ethiopia</p>
+                    <p class="text-slate-400"><strong>2024</strong></p>
+                </div>
+
+                <div class="education-item">
+                    <h4>Bachelor of Science in Computer Science</h4>
+                    <p class="text-slate-400"><strong>Mekelle University</strong> | Mekelle, Ethiopia</p>
+                    <p class="text-slate-400">2013 – 2017</p>
+                    <p class="text-slate-400 mt-2"><strong>Certifications:</strong></p>
+                    <ul class="list-disc ml-4 text-slate-300">
+                        <li>Certificate of Achievement at EC-COUNCIL</li>
+                        <li>Network Defense Essentials</li>
+                        <li>CCNA certificate preparations</li>
+                        <li>Introduction to dark web, anonymity, and Cryptocurrency</li>
+                        <li>Ethical hacking Essentials</li>
+                        <li>Digital Forensics Essentials</li>
+                        <li>Cyber Security For Business</li>
+                        <li>SQL Injection Attacks</li>
+                        <li>Build Your own NetApp Storage Lab</li>
+                        <li>Become a Full stack developer C# developer</li>
+                        <li>Certificate of course completion at CISCO networking Academy</li>
+                        <li>Introduction to Cyber-Security</li>
+                        <li>Junior Cyber Security Analyst Career path</li>
+                        <li>Ethical Hacker</li>
+                        <li>Ministry of Commerce, People's Republic of China: Training Course On Network Security for Central African Countries</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>Skills</h3>
+                
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul class="skill-list">
+                        <li>C#</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>PHP</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Web Technologies</h4>
+                    <ul class="skill-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>ASP.NET</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Database Management</h4>
+                    <ul class="skill-list">
+                        <li>SQL</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Numerical Computing</h4>
+                    <ul class="skill-list">
+                        <li>MATLAB</li>
+                        <li>NumPy</li>
+                        <li>Numerical Algorithms and Computation</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Cybersecurity Tools & Technologies</h4>
+                    <ul class="skill-list">
+                        <li>SIEM</li>
+                        <li>Firewall</li>
+                        <li>IDS/IPS</li>
+                        <li>Penetration Testing</li>
+                        <li>Network Security</li>
+                        <li>Endpoint Security</li>
+                        <li>Security Standards & Regulations (e.g., ISO 27001, NIST)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Other Skills</h4>
+                    <ul class="skill-list">
+                        <li>Project Management</li>
+                        <li>SDLC</li>
+                        <li>Problem-solving</li>
+                        <li>Troubleshooting</li>
+                        <li>Team Collaboration</li>
+                        <li>Communication</li>
+                        <li>Analytical Skills</li>
+                        <li>Innovation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>Languages</h3>
+                <ul class="skill-list">
+                    <li>English (Fluent)</li>
+                    <li>Amharic (Fluent)</li>
+                    <li>Tigrigna (Intermediate)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>References</h3>
+                <div class="text-slate-300">
+                    <p><strong>Adebabay Gelaw</strong></p>
+                    <p>Senior Software Developer</p>
+                    <p>Phone: +251 91 341 4960</p>
+                </div>
+                <div class="text-slate-300 mt-4">
+                    <p><strong>Amesisa Dereje</strong></p>
+                    <p>CEO, OTech Engineering and Technology Solutions PLC</p>
+                    <p>Phone: +251 91 222 3081</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-slate-400 py-6 text-center mt-8 rounded-t-lg shadow-lg">
+            &copy; <span id="current-year"></span> Semagn Derese. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
